@@ -1,0 +1,15 @@
+{
+  "name": "mdTable2json",
+  "version": "0.0.0",
+  "description": "markdownのテーブルからjsonを生成する",
+  "main": "index.js",
+  "scripts": {
+    "install": "git clone https://gist.github.com/84b269ec20729f5587ed.git node_modules/textload",
+    "test": "node_modules/mocha/bin/mocha test/mdTable2jsonTest.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.2.4"
+  }
+}
