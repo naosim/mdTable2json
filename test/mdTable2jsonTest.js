@@ -1,5 +1,5 @@
 var assert = require('assert');
-var mdTable2json = require('../lib/mdTable2json.js');
+var mdTable2json = require('../index.js');
 
 describe('mdTable2json', function () {
   it('single table', function () {

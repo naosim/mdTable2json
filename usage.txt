@@ -1,0 +1,5 @@
+[usage]
+  file
+    node mdTable2json tables.md
+  pipe
+    cat tables.md | node mdTable2json
