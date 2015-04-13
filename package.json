@@ -11,5 +11,9 @@
   "devDependencies": {
     "marked": "^0.3.3",
     "mocha": "^2.2.4"
+  },
+  "dependencies": {
+    "marked": "^0.3.3",
+    "mocha": "^2.2.4"
   }
 }
