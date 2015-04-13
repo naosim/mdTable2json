@@ -5,10 +5,11 @@ describe('mdTable2json', function () {
   it('single table', function () {
     var ip = '';
     ip += 'table\n';
-    ip += '| name | age |\n';
-    ip += '|------|-----|\n';
-    ip += '| mike | 20  |\n';
-    ip += '| kate | 30  |\n';
+    ip += '\n';
+    ip += 'name | age \n';
+    ip += '------|-----\n';
+    ip += ' mike | 20  \n';
+    ip += ' kate | 30  \n';
     ip += '\n';
     ip += 'hoge\n';
     var act = mdTable2json(ip);
@@ -19,16 +20,18 @@ describe('mdTable2json', function () {
   it('テーブル複数', function () {
     var ip = '';
     ip += 'table\n';
-    ip += '| name | age |\n';
-    ip += '|------|-----|\n';
-    ip += '| mike | 20  |\n';
-    ip += '| kate | 30  |\n';
     ip += '\n';
-    ip += 'hoge\n';
-    ip += '| item | value |\n';
-    ip += '|------|-------|\n';
-    ip += '| hoge | 5     |\n';
-    ip += '| foo  | 8     |\n';
+    ip += ' name | age \n';
+    ip += '------|-----\n';
+    ip += ' mike | 20  \n';
+    ip += ' kate | 30  \n';
+    ip += '\n';
+    ip += '# hoge\n';
+    ip += '\n';
+    ip += ' item | value \n';
+    ip += '------|-------\n';
+    ip += ' hoge | 5     \n';
+    ip += ' foo  | 8     \n';
     var act = mdTable2json(ip);
     var exp = [
       [{ name: 'mike', age: '20' }, { name: 'kate', age: '30' }],
@@ -40,10 +43,11 @@ describe('mdTable2json', function () {
   it('key-value table', function () {
     var ip = '';
     ip += 'table\n';
-    ip += '| key | value |\n';
-    ip += '|------|-----|\n';
-    ip += '| name | mike  |\n';
-    ip += '| age | 20  |\n';
+    ip += '\n';
+    ip += 'key | value \n';
+    ip += '------|-----\n';
+    ip += ' name | mike  \n';
+    ip += ' age | 20  \n';
     ip += '\n';
     ip += 'hoge\n';
     var act = mdTable2json(ip);

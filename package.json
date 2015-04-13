@@ -4,12 +4,12 @@
   "description": "markdownのテーブルからjsonを生成する",
   "main": "index.js",
   "scripts": {
-    "install": "git clone https://gist.github.com/84b269ec20729f5587ed.git node_modules/textload",
     "test": "node_modules/mocha/bin/mocha test/mdTable2jsonTest.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "marked": "^0.3.3",
     "mocha": "^2.2.4"
   }
 }

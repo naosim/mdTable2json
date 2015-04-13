@@ -1,20 +1,21 @@
-var mdTable2json = require('./lib/mdTable2json.js');
+var marked = require('marked');
+var htmlTable2json = require('./lib/htmlTable2json.js');
 var fs = require('fs');
-
-module.exports = mdTable2json;
 module.exports = function () {};
 
 if (require.main === module) {
   // main
-  require('textload')()(function(err, md) {
+  require(__dirname + '/lib/textload.js')()(function(err, md) {
     if(err) {
       console.log('' + fs.readFileSync('usage.txt'));
       return;
     }
-    var result = mdTable2json(md);
+    var result = htmlTable2json(marked(md));
     console.log(JSON.stringify(result));
   });
 } else {
   // module
-  module.exports = mdTable2json
+  module.exports = function(md) {
+    return htmlTable2json(marked(md));
+  };
 }
